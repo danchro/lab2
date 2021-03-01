@@ -11,12 +11,28 @@ public class UniqueWords
    {
 	  int count = 0;
 	  
+	  
+	  ArrayList<String> list2=new ArrayList<String>();
+	  //Checking the list
       for (int i = 0; i < list.size(); i++)
-      {		 for (int j = 0; j < list.size(); j++)
-		 {
-			
-		 }
+      {		 
+    	  boolean unique=true;
+    	  
+    	  for (int j = 0; j < list2.size(); j++)
+    	  {
+    		  if(list.get(i)==list2.get(j))
+    		  {
+    			  unique=false;
+    		  }
+    	  }
+    	  if(unique==true)
+    	  {
+    		  list2.add(list.get(i));
+    		  count++;
+    	  }
+    	  
       }
+    	  
 	  return count;
    }
 
